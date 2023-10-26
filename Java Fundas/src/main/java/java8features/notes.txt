@@ -1,0 +1,40 @@
+1. Lambda Expressions:
+    What is lambda expression:
+        It's an anonymous function.
+            Nameless
+            Without return type
+            Without modifiers
+
+    e.g.
+    public void m1() {
+        System.out.println("Hello World");
+    }
+    its lambda expression:
+    ()->{ System.out.println("Hello World"); }
+
+    If body contains only 1 line, curly braces are optional.
+    ()-> System.out.println("Hello World");
+
+    e.g public void m1(inta , int b) {
+        System.out.println(a+b);
+    }
+
+    (int a, int b)->System.out.println(a+b);
+    Where compiler can guess data types automatically, we can remove types.
+    (a, b)->System.out.println(a+b);
+
+    e.g.
+    public int sqaureIt(int n) {
+        return n*n;
+    }
+
+    (n)->{return n*n;}
+    If you want to return something, you can ignore return.
+    (n)->n*n  NOTE: When using curly braces you have to mention 'return'
+    but w/o curly braces i.e when only one statement, no need of 'return'
+    If only one input param is there, we don't require to use '()'.
+    n->n*n
+
+
+
+
