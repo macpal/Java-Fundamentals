@@ -1,0 +1,2 @@
+Q: In how many ways we can define a thread?
+A: By implementing Runnable interface and by extending Thread class.

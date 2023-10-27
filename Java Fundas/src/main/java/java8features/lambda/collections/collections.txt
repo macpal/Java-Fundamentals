@@ -1,0 +1,6 @@
+Comparable interface and Comparator interface
+Comparator interface contains only one method compare()
+    int compare(Object Obj1, Object Obj2)
+    returns -ve: iff ob1 has to come before obj2
+    returns +ve: iff obj1 has to come after obj2
+    returns 0 iff obj1 and obj2 are equal

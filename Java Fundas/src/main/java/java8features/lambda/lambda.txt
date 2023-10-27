@@ -24,7 +24,7 @@
     (a, b)->System.out.println(a+b);
 
     e.g.
-    public int sqaureIt(int n) {
+    public int squareIt(int n) {
         return n*n;
     }
 
@@ -34,6 +34,26 @@
     but w/o curly braces i.e when only one statement, no need of 'return'
     If only one input param is there, we don't require to use '()'.
     n->n*n
+
+    e.g.
+    public void m1(String s) {
+    return s.length();
+    }
+
+    s -> s.length();
+
+    e.g. which are valid in below:
+        n->return n*n; //INVALID:  without curly braces we can't use 'return'.
+        n->{return n*n;}; //VALID: Within curly braces if need to return value, need to use 'return' keyword.
+        n->{return n*n}; // INVALID: semicolon is missing after n*n
+        n->{n*n;}; // INVALID: Within braces curly if need to return value, need to use 'return' keyword.
+        n->n*n; // VALID
+        (a, b)-> {System.out.println("The sum:"+(a+b));}; // VALID
+
+
+
+
+
 
 
 

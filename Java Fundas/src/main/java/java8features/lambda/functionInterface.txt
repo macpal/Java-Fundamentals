@@ -1,0 +1,68 @@
+    --------------------------------------------------------------------
+    For calling lambda expressions, functional interface are required.
+
+    Functional interface(FI):
+        Examples of interface:
+            Runnable : contains only run()
+            Comparable : contains only compareTo()
+            Comparator: contains only compare()
+            ActionListener : actionPerformed()
+            Callable : call()
+        SAM : Single Abstract Method
+        A FI is an interface which has SAM.
+        Job of a FI: to invoke lambda expression.
+
+        Q: Are default methods and static methods are allowed in FI ?
+        A: Yes but only one abstract method
+            e.g. Interf is a functional interface
+            @FunctionalInterface // using this annotation lets compiler check that 1 and only 1 abstract methods should be present compulsory .
+            interface Interf {
+                public void m1();
+                default void m3(){};
+                public static void m3();
+            }
+
+            e.g.
+            @FunctionalInterface
+            interface A {
+                public void m1();
+            }
+            @FunctionalInterface
+            interface B extends A { // This is also VALID as it will inherit A which has an abstract method.
+            }
+
+             e.g.
+             @FunctionalInterface
+             interface A {
+                 public void m1();
+             }
+             @FunctionalInterface
+             interface B extends A {
+                  public void m1(); // This is VALID as B's m1() is overridden with A's m1()
+             }
+
+             e.g.
+             @FunctionalInterface
+             interface A {
+                 public void m1();
+             }
+             @FunctionalInterface
+             interface B extends A {
+                  public void m2(); // This is INVALID as it has 2 abstract methods.
+             }
+
+             e.g.
+             @FunctionalInterface
+             interface A {
+                 public void m1();
+             }
+
+             interface B extends A {
+                  public void m1(); // This is VALID as B is normal interface
+             }
+        Q: Is @FunctionalInterface mandatory ?
+        A: It's optional to specify for creating a functional interface. Without this annotation also interface will be
+           treated as functional interface.
+
+
+
